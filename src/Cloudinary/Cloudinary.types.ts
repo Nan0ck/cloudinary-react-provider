@@ -1,10 +1,10 @@
-import { Cloudinary } from "@cloudinary/url-gen";
+import { Cloudinary } from '@cloudinary/url-gen'
 
 export interface CloudinaryProviderProps {
-  children: React.ReactNode;
-  cloudName: string;
+  children: React.ReactNode
+  cloudName: string
 }
 
 export type CloudinaryContextType = {
-  client: Cloudinary;
-};
+  client: Cloudinary
+}

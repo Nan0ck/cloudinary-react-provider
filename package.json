@@ -1,33 +1,65 @@
 {
-  "name": "cloudinary-provider",
-  "version": "1.0.0",
+  "name": "cloudinary-react-provider",
+  "version": "1.0.2",
   "description": "React cloudinary context provider ",
-  "main": "index.ts",
-  "scripts": {},
+  "source": "src/index.tsx",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\" --fix"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nan0ck/cloudinary-provider.git"
+    "url": "git+https://github.com/Nan0ck/cloudinary-react-provider.git"
   },
   "keywords": [
     "cloudinary",
-    "provider",
     "react",
-    "contexgt",
-    "typescript"
+    "image-processing",
+    "image-management",
+    "image-optimization",
+    "media-upload",
+    "cdn",
+    "front-end",
+    "react-components",
+    "responsive-images",
+    "npm-package",
+    "context-api",
+    "image-cropping",
+    "media-library"
   ],
   "author": "Nan0ck",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Nan0ck/cloudinary-provider/issues"
+    "url": "https://github.com/Nan0ck/cloudinary-react-provider/issues"
   },
-  "homepage": "https://github.com/Nan0ck/cloudinary-provider#readme",
+  "homepage": "https://github.com/Nan0ck/cloudinary-react-provider#readme",
   "devDependencies": {
     "@types/react": "^18.2.43",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.1",
     "react": "^18.2.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.14.0"
-  }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }

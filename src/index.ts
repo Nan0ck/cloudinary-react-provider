@@ -1,1 +1,1 @@
-export * from "./Cloudinary";
+export * from './Cloudinary'

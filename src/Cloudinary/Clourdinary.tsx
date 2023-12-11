@@ -1,26 +1,12 @@
-"use client";
-import "react";
-import { createContext } from "react";
-import { Cloudinary } from "@cloudinary/url-gen";
-import {
-  CloudinaryProviderProps,
-  CloudinaryContextType,
-} from "./Cloudinary.types";
+import React from 'react'
 
-export const CloudinaryContext = createContext<CloudinaryContextType | null>(
-  null
-);
+import { createContext } from 'react'
+import { Cloudinary } from '@cloudinary/url-gen'
+import { CloudinaryProviderProps, CloudinaryContextType } from './Cloudinary.types'
 
-const CloudinaryProvider = ({
-  children,
-  cloudName,
-}: CloudinaryProviderProps) => {
-  const client = new Cloudinary({ cloud: { cloudName } });
-  return (
-    <CloudinaryContext.Provider value={{ client }}>
-      {children}
-    </CloudinaryContext.Provider>
-  );
-};
+export const CloudinaryContext = createContext<CloudinaryContextType | null>(null)
 
-export default CloudinaryProvider;
+export const CloudinaryProvider = ({ children, cloudName }: CloudinaryProviderProps) => {
+  const client = new Cloudinary({ cloud: { cloudName } })
+  return <CloudinaryContext.Provider value={{ client }}>{children}</CloudinaryContext.Provider>
+}
